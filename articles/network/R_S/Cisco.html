@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Cisco R&amp;S 基本命令 | Mark He</title>
+    <meta name="description" content="">
+    
+    
+    <link rel="preload" href="/assets/css/0.styles.9854472c.css" as="style"><link rel="preload" href="/assets/js/app.265cfc62.js" as="script"><link rel="preload" href="/assets/js/46.d8ab0cfb.js" as="script"><link rel="prefetch" href="/assets/js/10.aeb08d6d.js"><link rel="prefetch" href="/assets/js/11.c47163b6.js"><link rel="prefetch" href="/assets/js/12.915cb852.js"><link rel="prefetch" href="/assets/js/13.eff9359d.js"><link rel="prefetch" href="/assets/js/14.a7c6041b.js"><link rel="prefetch" href="/assets/js/15.d636104a.js"><link rel="prefetch" href="/assets/js/16.5692cdd2.js"><link rel="prefetch" href="/assets/js/17.69126d01.js"><link rel="prefetch" href="/assets/js/18.6eeb36a9.js"><link rel="prefetch" href="/assets/js/19.58fca24d.js"><link rel="prefetch" href="/assets/js/2.6ce74938.js"><link rel="prefetch" href="/assets/js/20.25d4abb7.js"><link rel="prefetch" href="/assets/js/21.60fbe128.js"><link rel="prefetch" href="/assets/js/22.1c918ce7.js"><link rel="prefetch" href="/assets/js/23.67e27de0.js"><link rel="prefetch" href="/assets/js/24.22e1499d.js"><link rel="prefetch" href="/assets/js/25.02c31893.js"><link rel="prefetch" href="/assets/js/26.ec379253.js"><link rel="prefetch" href="/assets/js/27.df1dfb7c.js"><link rel="prefetch" href="/assets/js/28.e5f55e62.js"><link rel="prefetch" href="/assets/js/29.4ab53bc8.js"><link rel="prefetch" href="/assets/js/3.89d1e693.js"><link rel="prefetch" href="/assets/js/30.13a47086.js"><link rel="prefetch" href="/assets/js/31.3e08bbf0.js"><link rel="prefetch" href="/assets/js/32.49e8d2f1.js"><link rel="prefetch" href="/assets/js/33.34b0a6b7.js"><link rel="prefetch" href="/assets/js/34.6c1ac4bc.js"><link rel="prefetch" href="/assets/js/35.521abc2d.js"><link rel="prefetch" href="/assets/js/36.c1ba9b6b.js"><link rel="prefetch" href="/assets/js/37.1b798d69.js"><link rel="prefetch" href="/assets/js/38.9409643a.js"><link rel="prefetch" href="/assets/js/39.8178cfd3.js"><link rel="prefetch" href="/assets/js/4.93bfe19f.js"><link rel="prefetch" href="/assets/js/40.72bda93a.js"><link rel="prefetch" href="/assets/js/41.0a2d9067.js"><link rel="prefetch" href="/assets/js/42.1e3cfe94.js"><link rel="prefetch" href="/assets/js/43.2a8a6955.js"><link rel="prefetch" href="/assets/js/44.f0df4491.js"><link rel="prefetch" href="/assets/js/45.0ec4ef64.js"><link rel="prefetch" href="/assets/js/47.101b564b.js"><link rel="prefetch" href="/assets/js/48.10290b31.js"><link rel="prefetch" href="/assets/js/49.6f0c6b8b.js"><link rel="prefetch" href="/assets/js/5.7c652252.js"><link rel="prefetch" href="/assets/js/50.48ff2154.js"><link rel="prefetch" href="/assets/js/51.8c372db5.js"><link rel="prefetch" href="/assets/js/52.1188b68c.js"><link rel="prefetch" href="/assets/js/53.a04fdb75.js"><link rel="prefetch" href="/assets/js/54.66b64b21.js"><link rel="prefetch" href="/assets/js/55.923fa6e5.js"><link rel="prefetch" href="/assets/js/56.f51a4e44.js"><link rel="prefetch" href="/assets/js/57.ee90ffbd.js"><link rel="prefetch" href="/assets/js/58.a0fb6737.js"><link rel="prefetch" href="/assets/js/59.5581418f.js"><link rel="prefetch" href="/assets/js/6.397be193.js"><link rel="prefetch" href="/assets/js/60.cba6de65.js"><link rel="prefetch" href="/assets/js/61.6046c511.js"><link rel="prefetch" href="/assets/js/62.9dce1a90.js"><link rel="prefetch" href="/assets/js/63.d8a483b0.js"><link rel="prefetch" href="/assets/js/7.f883906b.js"><link rel="prefetch" href="/assets/js/8.e9363c12.js"><link rel="prefetch" href="/assets/js/9.e10c76be.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.9854472c.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">Mark He</span></a> <div class="links" style="max-width:nullpx;"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">Home</a></div><div class="nav-item"><a href="/articles/datascience/" class="nav-link">Data Science</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">Development</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>Full-Stack</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/articles/development/python/" class="nav-link">Python</a></li><li class="dropdown-subitem"><a href="/articles/development/java/" class="nav-link">Java</a></li><li class="dropdown-subitem"><a href="/articles/development/vue/" class="nav-link">Vue</a></li><li class="dropdown-subitem"><a href="/articles/development/Git/" class="nav-link">Git</a></li><li class="dropdown-subitem"><a href="/articles/development/tool/" class="nav-link">Tools</a></li></ul></li></ul></div></div><div class="nav-item"><a href="/articles/algorithm/" class="nav-link">Algorithm</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">Network</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/articles/network/R_S/" class="nav-link router-link-active">Router&amp;Switch</a></li><li class="dropdown-item"><!----> <a href="/articles/network/malfunction/" class="nav-link">Malfunction</a></li></ul></div></div><div class="nav-item"><a href="/articles/speech/" class="nav-link">Speech</a></div><div class="nav-item"><a href="/articles/goals.html" class="nav-link">Goals</a></div><div class="nav-item"><a href="/articles/prepforjob.html" class="nav-link">PrepForJobs</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">Home</a></div><div class="nav-item"><a href="/articles/datascience/" class="nav-link">Data Science</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">Development</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>Full-Stack</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/articles/development/python/" class="nav-link">Python</a></li><li class="dropdown-subitem"><a href="/articles/development/java/" class="nav-link">Java</a></li><li class="dropdown-subitem"><a href="/articles/development/vue/" class="nav-link">Vue</a></li><li class="dropdown-subitem"><a href="/articles/development/Git/" class="nav-link">Git</a></li><li class="dropdown-subitem"><a href="/articles/development/tool/" class="nav-link">Tools</a></li></ul></li></ul></div></div><div class="nav-item"><a href="/articles/algorithm/" class="nav-link">Algorithm</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">Network</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/articles/network/R_S/" class="nav-link router-link-active">Router&amp;Switch</a></li><li class="dropdown-item"><!----> <a href="/articles/network/malfunction/" class="nav-link">Malfunction</a></li></ul></div></div><div class="nav-item"><a href="/articles/speech/" class="nav-link">Speech</a></div><div class="nav-item"><a href="/articles/goals.html" class="nav-link">Goals</a></div><div class="nav-item"><a href="/articles/prepforjob.html" class="nav-link">PrepForJobs</a></div> <!----></nav>  <ul class="sidebar-links"><li><div class="sidebar-group first"><p class="sidebar-heading open"><span>R&amp;S</span> <!----></p> <ul class="sidebar-group-items"><li><a href="/" class="sidebar-link">Home</a></li><li><a href="/articles/network/R_S/Cisco.html" class="active sidebar-link">Cisco R&amp;S 基本命令</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/articles/network/R_S/Cisco.html#cisco命令全集-－-思科命令汇总" class="sidebar-link">CISCO命令全集　－　思科命令汇总</a></li></ul></li><li><a href="/articles/network/R_S/Huawei.html" class="sidebar-link">Huawei R&amp;S 基本命令</a></li></ul></div></li></ul> </div> <div class="page"> <div class="content"><h1 id="cisco-r-s-基本命令">Cisco R&amp;S 基本命令</h1> <p>##视图模式介绍：
+普通视图 router&gt;
+特权视图 router#    /在普通模式下输入enable
+全局视图 router(config)#   /在特权模式下输入config t
+接口视图 router(config-if)#    /在全局模式下输入int 接口名称 例如int s0或int e0
+路由协议视图 router（config-route）#   /在全局模式下输入router 动态路由协议名称</p> <h3 id="_1、基本配置：">1、基本配置：</h3> <pre><code>router&gt;enable     /进入特权模式
+router#conf t     /进入全局配置模式
+router(config)#hostname xxx    /设置设备名称就好像给我们的计算机起个名字
+router(config)#enable password   /设置特权口令
+router(config)#no ip domain-lookup    /不允许路由器缺省使用DNS解析命令
+router(config)#line console 0   /进入控制口的服务模式
+router(config-line)#password xxx  /要设置console的密码
+router(config-line)#login  /使能可以登陆
+router(config-line)#logging synchronous /日志同步
+router(config-line)#exec-timeout 0 0   /设置时间溢出为0
+router(config-line)#line vty 0 4  /进入设置telnet服务模式
+router(config-line)#password xxx  /设置telnet的密码
+router(config-line)#login  /使能可以登陆
+router(config-line)#exit   /保存退出到特权模式
+router(config)# Service password-encrypt /对所有在路由器上输入的口令进行暗文加密
+</code></pre> <p>设置思科设备console密码、enable密码、vty登录密码
+思科设备各级密码：
+1）  console密码
+SW2(config)#line console 0
+SW2(config-line)#password cisco
+SW2(config-line)#login //启用密码认证，默认没有，需要加上去
+SW2(config-line)#login local //本地开启用户认证
+SW2(config)username xiao password fan //创建本地用户
+SW2(config)username xiao privilege 15 password fan //以该用户登入设备后直接进入特权模式
+说明---对用户的权限定义0-15级，最高为15，任何命令都可操作
+SW2(config)service password-encryption //明文密码加密
+2）  特权模式密码(设置全局密码)
+SW2&gt;enadle
+SW2(config)#configure terminal
+1.(config)#enable password en cisco←密码encisco 
+2.(config)#enable secret jmcisco←密码jmcisco  #2个同时设，只有secret 有效，因为其优先极高
+(config)#login  &lt;--一定要加，表示启用
+全局密码设置完成 
+exitenable password xiaofan 优先级低
+enable secret cisco  优先级高
+思科加密方式：
+0 显示的是密码本身
+7 密文加密，容易破解  
+5 复杂密文加密
+3）  虚拟通道密码
+SW2&gt;enadle
+SW2(config)#configure terminal
+SW2(config)#line vty 0 4
+SW2(config-line)#password telnetcisco
+SW2(config-line)#login //默认就有
+SW2(config-line)#login local //开启本地用户认证，使用本地用户数据库
+SW2(config-line)no login //不需要密码就可登陆
+telnet登入交换机或路由器，若不设置line vty密码，则默认客户端不能远程访问到设备
+ctrl + shift + 6一起松开再按X即退出
+show users/who  查看当前有哪些用户存在，console段是自己登陆到别的设备，vty段是别人登录到自己这端，*代表自己登陆用的line
+show sessions   显示当前所有会话
+show line   显示当前所有线路，*代表有用户在线的line
+R#disconnect 2  断开由自己建立的会话2
+R#clear line 3  关闭别的设备登录到自己的会话3 
+ssh登入设备：只能以username和password登入
+设备端做配置：
+ip domain name cisco #设置交换机domain
+crypto key generate
+hostname cisco    //要有domain name和hostname
+username cisco password cisco
+在vty下：
+login local
+transport input ssh  //只允许以ssh方式登入，telnet时抓包可以看到用户和密码，ssh采用非对称加密技术，比telnet安全
+登入端登入命令：ssh -l cisco 3.3.3.3
+ 
+ 
+ 
+关于Cisco IOS 的登录密码以及权限分配设置
+enable password  xxxx     初级密码，用于验证从用户模式到特权模式的验证
+enable secret xxxxx       MD5加密密码 用法同上
+enabl password level xx   指定密码作用于哪个级别
+enable secret level xx    作用同上
+ 
+R2(config)#enable password ?
+  0      Specifies an UNENCRYPTED password will follow
+  7      Specifies a HIDDEN password will follow
+  LINE   The UNENCRYPTED (cleartext) 'enable' password
+  level  Set exec level password
+ 
+  
+R2(config)#enable secret ?
+  0      Specifies an UNENCRYPTED password will follow
+  5      Specifies an ENCRYPTED secret will follow
+  LINE   The UNENCRYPTED (cleartext) 'enable' secret
+  level  Set exec level password
+ 
+ 
+注意这里：0 5 7 的 含义不同。0 为不加密，5 为MD5 。7 为Cisco自有加密算法（不牢靠，容易被破解）
+ 
+service password-encryption 是使用7的加密方法加密存储在本地的所有密码。Cisco官方不推荐使用这个方法。
+ 
+简单密码验证：
+ 
+console 验证配置：
+ 
+line console 0
+password xxxx
+end
+ 
+Vty 验证：
+line vty 0 4 
+password xxxx
+end
+ 
+带用户名的密码验证：
+username xxxx secret xxx
+line console 0
+login local
+end
+ 
+line vty 0 4
+login local
+end
+ 
+分级的权限验证：
+我只想让Level 7 的用户在特权模式下：clear counters 和reload
+配置如下：
+privilege exec level 7 clear counters
+privilege exec level 7 reload
+enable secret level 7 xxxx
+或者
+privilege exec level 7 clear counters
+privilege exec level 7 reload
+username xxx privilege 7 secret xxxx
+这种模式下：要登录必须这样：
+R1&gt;login
+username:xxx
+password:xxx
+ 
+个人比较喜欢的一套分级权限的完整配置：
+privilege exec level 7 clear counters
+privilege exec level 7 reload
+username xxx privilege 7 secret xxxx
+username xxx privilege 15 secret xxx (管理员登录)
+line console 0
+login local
+line vty 0 4
+login local
+ 
+对于，show run 来说，
+如果Level 7 的用户被授权能够show run
+但是其他的仍未被授权的话，查看的show run 将是如下样子：
+R1#show run
+Building configuration...
+ 
+Current configuration : 53 bytes
+!
+boot-start-marker
+boot-end-marker
+!
+!
+!
+!
+!
+!
+end
+ 
+其原因是因为未给Level 7 的用户授权 Global Configuration 权利
+现在我授权如下：
+privilege Configure leve 7 interface
+ 
+然后再Level 7 下，show run 可以看见如下：
+R1#show run
+Building configuration...
+ 
+Current configuration : 237 bytes
+!
+boot-start-marker
+boot-end-marker
+!
+!
+!
+!
+!
+interface Ethernet0/0
+!
+interface Ethernet0/1
+!
+interface Ethernet0/2
+!
+interface Ethernet0/3
+!
+interface Serial1/0
+!
+interface Serial1/1
+!
+interface Serial1/2
+!         
+interface Serial1/3
+!
+!
+end
+ 
+注意这里，这里可以看见接口了。所以说对于show run 来说,必须先授权才能查看相应内容~
+ 
+顺便解释下 关于enable secret password的问题：
+R1(config)#enable secret ?
+  0      Specifies an UNENCRYPTED password will follow
+  5      Specifies an ENCRYPTED secret will follow
+  LINE   The UNENCRYPTED (cleartext) 'enable' secret
+  level  Set exec level password
+这里，很多人都不知道 0 5 的区别。
+或者误认为0 是不加密密码，5 则是加密密码。
+其实对于Secret 选项来说，密码肯定是会被加密的。
+假设我要设置的密码为cisco
+而这里的0 是指：我现在即将输入的密码是原始密码，是：cisco
+而如果是5 的话：就是输入cisco 的MD5值：$1$XNRo$8FSa/XSF9DbmF6VbK6L6K.</p> <h3 id="_2、接口配置：">2、接口配置：</h3> <pre><code>router(config)#interface serial0  /进入接口配置模式 serial 0 端口配置（如果是模块化的路由器前面加上槽位编号，例如serial0/0 代表这个路由器的0槽位上的第一个接口）
+router(config-if)#ip address xxx.xxx.xxx.xxx xxx.xxx.xxx.xxx /添加ip 地址和掩码
+router(config-if)#enca hdl/ppp   捆绑链路协议 hdlc 或者 ppp 思科缺省串口封装的链路层协议是HDLC所以在show run配置的时候接口上的配置没有，如果要封装为别的链路层协议例如PPP/FR/X25就是看到接口下的enca ppp或者enca fr
+router(config)#int loopback    /建立环回口(逻辑接口)模拟不同的本机网段
+router(config-if)#ip add xxx.xxx.xxx.xxx xxx.xxx.xxx.xxx /添加ip 地址和掩码给环回口
+router(config-if)#no shutdown   /在物理接口上配置了ip地址后用no shut启用这个物理接口反之可以用shutdown管理性的关闭接口
+</code></pre> <h3 id="_3、路由配置：">3、路由配置：</h3> <pre><code>(1)静态路由
+router(config)#ip route xxx.xxx.xxx.xxx xxx.xxx.xxx.xxx 下一条或自己的接口
+router(config)#ip route 0.0.0.0 0.0.0.0 s 0   添加缺省路由
+(2)动态路由
+rip协议
+router(config)#router rip   /启动rip协议
+router(config-router)#network xxx.xxx.xxx.xxx  /宣告自己的网段
+router(config-router)#version 2   转换为rip 2版本
+router(config-router)#no auto-summary   /关闭自动汇总功能，rip V2才有作用
+router(config-router)# passive-int  接口名 /启动本路由器的那个接口为被动接口
+router(config-router)# nei xxx.xxx.xxx.xxx /广播转单播报文，指定邻居的接ip
+igrp协议
+router(config)#router igrp xxx    /启动igrp协议 
+router(config-router)#network xxx.xxx.xxx.xxx  /宣告自己的网段
+router(config-router)#variance xxx  /调整倍数因子，使用不等价的负载均衡
+eigrp协议
+router(config)router eigrp xxx    /启动协议
+router(config-router)#network xxx.xxx.xxx.xxx  /宣告自己的网段
+router(config-router)#variance xxx  /调整倍数因子，使用不等价的负载均衡
+router(config-router)#no auto-summary    /关闭自动汇总功能
+ospf协议
+router(config)router ospf xxx    /启动协议启动一个OSPF协议进程
+router(config-router)network xxx.xxx.xxx.xxx area xxx /宣告自己的接口或网段在ospf的区域中可以把不同接口宣告在不同区域中
+router(config-router)router-id xxx.xxx.xxx.xxx  /配置路由的id
+router(config-router)aera xxx stub  /配置xxx区域为末梢区域 加入这个区域的路由器全部要配置这个条命令
+router(config-router)aera xxx stub no-summary   /配置xxx区域为完全末梢区域 只在ABR上配置
+router(config-router)aera xxx nssa  /配置xxx区域为非纯末梢区域加入这个区域的路由器全部要配置这个条命令
+router(config-router)aera xxx nssa no-summary   /配置xxx区域为完全非纯末梢区域 只在ABR上配置,并发布缺省路由信息进入这个区域内的路由器
+</code></pre> <h3 id="_4、保存当前修改-运行的配置：">4、保存当前修改/运行的配置：</h3> <pre><code>router#write    /将RAM中的当前配置存储到NVRAM中，下次路由器启动就是 
+        执行保存的配置
+router#Copy running-config startup-config  /命令与write效果一样
+</code></pre> <h3 id="_5、一般的常用命令">5、一般的常用命令</h3> <pre><code>router(config-if)#exit
+router(config)#
+router(config-router)#exit
+router(config)#
+router(config-line)#exit
+router(config)#
+router(config)#exit 
+router#
+
+exit命令       /从接口、协议、line等视图模式下退回到全局配置模式，或从全局配置模式退回到特权模式
+router(config-if)#end
+router(config-router)#end
+router(config-line)#end
+router#
+
+end命令      /从任何视图直接回到特权模式
+router#Logout       /退出当前路由器登陆模式相对与windows的注销
+router#reload       /重新启动路由器（热启动）冷启动就是关闭路由器再打开电源开关 
+特权模式下：
+router#show ip route       /查看当前的路由表
+router#clear ip route *     /清楚当前的路由表
+router#show ip protocol     /查看当前路由器运行的动态路由协议情况
+router#show ip int brief     /查看当前的路由器的接口ip地址启用情况
+router#show running-config    /查看当前运行配置
+router#show startup-config    /查看启动配置
+router#debug ip pack       /打开ip报文的调试
+router#terminal monitor     /输出到终端上显示调试信息
+router#show ip eigrp neighbors     /查看eigrp协议的邻居表
+router#show ip eigrp top     /查看eigrp协议的拓朴表
+router#show ip eigrp interface     /查看当前路由器运行eigrp协议的接口情况
+router#show ip ospf neighbor      /查看当前路由器的ospf协议的邻居表
+router#show ip ospf interface     /查看当前路由器运行ospf协议的接口情况
+router#clear ip ospf process      /清楚当前路由器ospf协议的进程
+router#Show interfaces      /显示设置在路由器和访问服务器上所有接口的统计信息. 显示路由器上配置的所有接口的状态
+router#Show interfaces serial     /显示关于一个串口的信息
+router#Show ip interface     /列出一个接口的IP信息和状态的小结, 列出接口的状态和全局参数
+――――――――――――――――――――――――
+</code></pre> <h2 id="cisco命令全集-－-思科命令汇总">CISCO命令全集　－　思科命令汇总</h2> <pre><code>Access-enable     允许路由器在动态访问列表中创建临时访问列表入口
+Access-group      把访问控制列表(ACL)应用到接口上
+Access-list      定义一个标准的IP ACL
+Access-template       在连接的路由器上手动替换临时访问列表入口
+Appn       向APPN子系统发送命令
+Atmsig         执行ATM信令命令
+B        手动引导操作系统
+Bandwidth       设置接口的带宽
+Banner motd      指定日期信息标语
+Bfe       设置突发事件手册模式
+Boot system      指定路由器启动时加载的系统映像
+Calendar        设置硬件日历
+Cd        更改路径
+Cdp enable       允许接口运行CDP协议
+Clear      复位功能
+Clear counters        清除接口计数器
+Clear interface       重新启动接口上的硬件逻辑
+Clockrate       设置串口硬件连接的时钟速率，如网络接口模块和接口处理器能接受的速率
+Cmt       开启/关闭FDDI连接管理功能
+Config-register       修改配置寄存器设置
+Configure       允许进入存在的配置模式，在中心站点上维护并保存配置信息
+Configure memory       从NVRAM加载配置信息
+Configure terminal      从终端进行手动配置
+Connect        打开一个终端连接
+Copy       复制配置或映像数据
+Copy flash tftp       备份系统映像文件到TFTP服务器
+Copy running-config startup-config    将RAM中的当前配置存储到NVRAM
+Copy running-config tftp      将RAM中的当前配置存储到网络TFTP服务器上
+Copy tftp flash       从TFTP服务器上下载新映像到Flash
+Copy tftp running-config 从TFTP服务器上下载配置文件
+Debug 使用调试功能
+Debug dialer 显示接口在拨什么号及诸如此类的信息
+Debug ip rip 显示RIP路由选择更新数据
+Debug ipx routing activity 显示关于路由选择协议(RIP)更新数据包的信息
+Debug ipx sap 显示关于SAP（业务通告协议）更新数据包信息
+Debug isdn q921 显示在路由器D通道ISDN接口上发生的数据链路层（第2层）的访问过程
+Debug ppp 显示在实施PPP中发生的业务和交换信息
+Delete 删除文件
+Deny 为一个已命名的IP ACL设置条件
+Dialer idle-timeout 规定线路断开前的空闲时间的长度
+Dialer map 设置一个串行接口来呼叫一个或多个地点
+Dialer wait-for-carrier-time 规定花多长时间等待一个载体
+Dialer-group 通过对属于一个特定拨号组的接口进行配置来访问控制
+Dialer-list protocol 定义一个数字数据接受器（DDR）拨号表以通过协议或ACL与协议的组合来控制控制拨号
+Dir 显示给定设备上的文件
+Disable 关闭特许模式
+Disconnect 断开已建立的连接
+Enable 打开特许模式
+Enable password 确定一个密码以防止对路由器非授权的访问
+Enable password 设置本地口令控制不同特权级别的访问
+Enable secret 为enable password命令定义额外一层安全性
+Encapsulation frame-relay 启动帧中继封装
+Encapsulation novell-ether 规定在网络段上使用的Novell独一无二的格式
+Encapsulation PPP 把PPP设置为由串口或ISDN接口使用的封装方法
+Encapsulation sap 规定在网络段上使用的以太网802.2格式Cisco的密码是sap
+End 退出配置模式
+Erase 删除闪存或配置缓存
+Erase startup-config 删除NVRAM中的内容
+Exec-timeout 配置EXEC命令解释器在检测到用户输入前所等待的时间
+Exit 退出所有配置模式或者关闭一个激活的终端会话和终止一个EXEC
+Exit 终止任何配置模式或关闭一个活动的对话和结束EXEC
+format 格式化设备
+Frame-relay local-dlci 为使用帧中继封装的串行线路启动本地管理接口（LMI）
+Help 获得交互式帮助系统
+History 查看历史记录
+Hostname 使用一个主机名来配置路由器，该主机名以提示符或者缺省文件名的方式使用
+Interface 设置接口类型并且输入接口配置模式
+Interface 配置接口类型和进入接口配置模式
+Interface serial 选择接口并且输入接口配置模式
+Ip access-group 控制对一个接口的访问
+Ip address 设定接口的网络逻辑地址
+Ip address 设置一个接口地址和子网掩码并开始IP处理
+Ip default-network 建立一条缺省路由
+Ip domain-lookup 允许路由器缺省使用DNS
+Ip host 定义静态主机名到IP地址映射
+Ip name-server 指定至多6个进行名字-地址解析的服务器地址
+Ip route 建立一条静态路由
+Ip unnumbered 在为给一个接口分配一个明确的IP地址情况下，在串口上启动互联网协议（IP）的处理过程
+Ipx delay 设置点计数
+Ipx ipxwan 在串口上启动IPXWAN协议
+Ipx maximum-paths 当转发数据包时设置Cisco IOS软件使用的等价路径数量
+Ipx network 在一个特定接口上启动互联网数据包交换（IPX）的路由选择并且选择封装的类型（用帧封装）
+Ipx router 规定使用的路由选择协议
+Ipx routing 启动IPX路由选择
+Ipx sap-interval 在较慢的链路上设置较不频繁的SAP（业务广告协议）更新
+Ipx type-20-input-checks 限制对IPX20类数据包广播的传播的接受
+Isdn spid1 在路由器上规定已经由ISDN业务供应商为B1信道分配的业务简介号（SPID）
+Isdn spid2 在路由器上规定已经由ISDN业务供应商为B2信道分配的业务简介号（SPID）
+Isdn switch-type 规定了在ISDN接口上的中央办公区的交换机的类型
+Keeplive 为使用帧中继封装的串行线路LMI（本地管理接口）机制
+Lat 打开LAT连接
+Line 确定一个特定的线路和开始线路配置
+Line concole 设置控制台端口线路
+Line vty 为远程控制台访问规定了一个虚拟终端
+Lock 锁住终端控制台
+Login 在终端会话登录过程中启动了密码检查
+Login 以某用户身份登录，登录时允许口令验证
+Mbranch 向下跟踪组播地址路由至终端
+Media-type 定义介质类型
+Metric holddown 把新的IGRP路由选择信息与正在使用的IGRP路由选择信息隔离一段时间
+Mrbranch 向上解析组播地址路由至枝端
+Mrinfo 从组播路由器上获取邻居和版本信息
+Mstat 对组播地址多次路由跟踪后显示统计数字
+Mtrace 由源向目标跟踪解析组播地址路径
+Name-connection 命名已存在的网络连接
+Ncia 开启/关闭NCIA服务器
+Network 把一个基于NIC的地址分配给一个与它直接相连的路由器把网络与一个IGRP的路由选择的过程联系起来在IPX路由器配置模式下，在网络上启动加强的IGRP
+Network 指定一个和路由器直接相连的网络地址段
+Network-number 对一个直接连接的网络进行规定
+No shutdown 打开一个关闭的接口
+Pad 开启一个X.29 PAD连接
+Permit 为一个已命名的IP ACL设置条件
+Ping 把ICMP响应请求的数据包发送网络上的另一个节点检查主机的可达性和网络的连通性对网络的基本连通性进行诊断
+Ping 发送回声请求，诊断基本的网络连通性
+Ppp 开始IETF点到点协议
+Ppp authentication 启动Challenge握手鉴权协议（CHAP）或者密码验证协议（PAP）或者将两者都启动，并且对在接口上选择的CHAP和PAP验证的顺序进行规定
+Ppp chap hostname 当用CHAP进行身份验证时，创建一批好像是同一台主机的拨号路由器
+Ppp chap password 设置一个密码，该密码被发送到对路由器进行身份验证的主机命令对进入路由器的用户名/密码的数量进行了限制
+Ppp pap sent-username 对一个接口启动远程PAP支持，并且在PAP对同等层请求数据包验证过程中使用sent-username和password
+Protocol 对一个IP路由选择协议进行定义，该协议可以是RIP，内部网关路由选择协议（IGRP），开放最短路径优先（OSPF），还可以是加强的IGRP
+Pwd 显示当前设备名
+Reload 关闭并执行冷启动；重启操作系统
+Rlogin 打开一个活动的网络连接
+Router 由第一项定义的IP路由协议作为路由进程，例如：router rip 选择RIP作为路由协议
+Router igrp 启动一个IGRP的路由选择过程
+Router rip 选择RIP作为路由选择协议
+Rsh 执行一个远程命令
+Sdlc 发送SDLC测试帧
+Send 在tty线路上发送消息
+Service password-encryption 对口令进行加密
+Setup 运行Setup命令
+Show 显示运行系统信息
+Show access-lists 显示当前所有ACL的内容
+Show buffers 显示缓存器统计信息
+Show cdp entry 显示CDP表中所列相邻设备的信息
+Show cdp interface 显示打开的CDP接口信息
+Show cdp neighbors 显示CDP查找进程的结果
+Show dialer 显示为DDR（数字数据接受器）设置的串行接口的一般诊断信息
+Show flash 显示闪存的布局和内容信息
+Show frame-relay lmi 显示关于本地管理接口（LMI）的统计信息
+Show frame-relay map 显示关于连接的当前映射入口和信息
+Show frame-relay pvc 显示关于帧中继接口的永久虚电路（pvc）的统计信息
+Show hosts 显示主机名和地址的缓存列表
+Show ip protocols 显示活动路由协议进程的参数和当前状态
+Show ip route 显示路由选择表的当前状态
+Show ip router 显示IP路由表信息
+Show ipx interface 显示Cisco IOS软件设置的IPX接口的状态以及每个接口中的参数
+Show ipx route 显示IPX路由选择表的内容
+Show ipx servers 显示IPX服务器列表
+Show ipx traffic 显示数据包的数量和类型
+Show isdn active 显示当前呼叫的信息，包括被叫号码、建立连接前所花费的时间、在呼叫期间使用的自动化操作控制（AOC）收费单元以及是否在呼叫期间和呼叫结束时提供AOC信息
+Show isdn ststus 显示所有isdn接口的状态、或者一个特定的数字信号链路（DSL）的状态或者一个特定isdn接口的状态
+Show memory 显示路由器内存的大小，包括空闲内存的大小
+Show processes 显示路由器的进程
+Show protocols 显示设置的协议
+Show protocols 显示配置的协议。这条命令显示任何配置了的第3层协议的状态
+Show running-config 显示RAM中的当前配置信息
+Show spantree 显示关于虚拟局域网（VLAN）的生成树信息
+Show stacks 监控和中断程序对堆栈的使用，并显示系统上一次重启的原因
+Show startup-config 显示NVRAM中的启动配置文件
+Show ststus 显示ISDN线路和两个B信道的当前状态
+Show version 显示系统硬件的配置，软件的版本，配置文件的名称和来源及引导映像
+Shutdown 关闭一个接口
+Telnet 开启一个telect连接
+Term ip 指定当前会话的网络掩码的格式
+Term ip netmask-format 规定了在show命令输出中网络掩码显示的格式
+Timers basic 控制着IGRP以多少时间间隔发送更新信息
+Trace 跟踪IP路由
+Username password 规定了在CHAP和PAP呼叫者身份验证过程中使用的密码
+Verify 检验flash文件
+Where 显示活动连接
+Which-route OSI路由表查找和显示结果
+Write 运行的配置信息写入内存，网络或终端
+Write erase 现在由copy startup-config命令替换</code></pre></div> <div class="page-edit"><!----> <!----></div> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/" class="prev router-link-active">
+          Home
+        </a></span> <span class="next"><a href="/articles/network/R_S/Huawei.html">
+          Huawei R&amp;S 基本命令
+        </a>
+        →
+      </span></p></div> </div> <!----></div></div>
+    <script src="/assets/js/app.265cfc62.js" defer></script><script src="/assets/js/46.d8ab0cfb.js" defer></script>
+  </body>
+</html>
